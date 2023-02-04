@@ -9,19 +9,35 @@ services:
     image: "nginx"
     ports:
     - 80:80
+    volumes:
+    - ./nginx.conf:/etc/nginx/nginx.conf
     networks:
       - proxy
 
-  blue:
+  blue-01:
     image: "httpd"
     volumes:
-      - ./public.html:/usr/local/apache2/htdocs/index.html
+      - ./blue/index.html:/usr/local/apache2/htdocs/index.html
     networks:
     - proxy
 
-  red:
+  blue-02:
     image: "httpd"
     volumes:
-      - ./index.html:/usr/local/apache2/htdocs/index.html
+      - ./blue/index.html:/usr/local/apache2/htdocs/index.html
+    networks:
+    - proxy
+
+  red-01:
+    image: "httpd"
+    volumes:
+      - ./red/index.html:/usr/local/apache2/htdocs/index.html
+    networks:
+    - proxy
+
+  red-02:
+    image: "httpd"
+    volumes:
+      - ./red/index.html:/usr/local/apache2/htdocs/index.html
     networks:
     - proxy
