@@ -2,8 +2,8 @@
 
 Para que o teste funcione corretamente, é necessário uma alteração na pasta "hosts" da maquina, no modo de administrador.
 
-Linux: `/etc/hosts`.
-windows: `c:/Windows/System32/drivers/etc/hosts`.
+- Linux: `/etc/hosts`
+- Windows: `c:/Windows/System32/drivers/etc/hosts`.
 
 Adicinar o seguinte:
 
